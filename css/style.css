@@ -198,6 +198,22 @@ button {
   .movie-list li {
     text-align: center;
   }
+  .movie-poster-large{
+    height: 40vh;
+    border: 2px solid #fff;
+  }
+  #movie-header{
+    height:27em;
+  }
+  body{
+    font: 0.8em/1.5 'Roboto', sans-serif ;
+  }
+  #movie-header > h2{
+    font-size: initial;
+  }
+  #back-search{
+    width: 17%;
+  }
 }
 
 @media (min-width: 550px) {
@@ -232,7 +248,16 @@ button {
  .movie-title {
     padding-right: 1.25em;
  }
-
+  .movie-poster-large{
+    height: 130%;
+    border: 5px solid #fff;
+  }
+  #movie-header{
+    height: 40vh;
+  }
+  #back-search{
+    width: 16%;
+  }
 }
 
 @media (min-width: 769px) {
@@ -253,11 +278,31 @@ button {
   .movie-list li {
     width: 33.333333333%;
   }
+  .movie-poster-large{
+    height: 163%;;
+    border: 10px solid #fff;
+  }
+  #movie-header{
+    height: 14em;
+  }
+  #back-search{
+    width: 15%;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 999px) { 
   .movie-list li:nth-of-type(3n+1) {
     clear: left;
+  }
+  #movie-header{
+    height: 13em;
+  }
+  .movie-poster-large{
+    border: 10px solid #fff;
+    height: 176%;
+  }
+  #back-search{
+    width: 14%;
   }
 }
 
@@ -269,4 +314,58 @@ button {
   .movie-list li:nth-of-type(4n+1) {
     clear: left;
   }
+  .movie-poster-large{
+    border: 10px solid #fff;
+    height: 190%;
+  }
+  #movie-header{
+    height:13em;
+  }
+  #back-search{
+    width: 13%;
+  }
+}
+
+/*====================================
+ Movie Description Styles
+======================================*/
+
+#back-search::before{
+  content: '<';
+}
+
+#movie-header{
+  background: #49494e;
+  color: #fff;
+}
+
+.movie-poster-large{
+  float: left;
+  position: static;
+  margin-top: 33px;
+  margin-right: 6px;
+  margin-left: 31px;
+
+}
+
+#back-search{
+  position: fixed;
+  color: white;
+  font-size: 2vh;
+}
+
+#movie-header > span{
+  font-size: 85%;
+}
+
+#view-movie{
+  background: #35b936;
+  color: white;
+  padding: 1%;
+}
+
+#movie-header > i {
+  position: relative;
+  margin-top: 0;
+  background: grey
 }
