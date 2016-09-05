@@ -8,10 +8,9 @@ var showSearchResult = function () {
     $('.main-content').show();
 };
 
-
 var getMovie;
 getMovie = function (element) {
-    var $liItem = $('.movie-list').find(element);
+    var $liItem = element;
     var movieInfo = "";
     if (!$liItem.hasClass("no-movies")) {
         var query = {
@@ -22,7 +21,7 @@ getMovie = function (element) {
             url: $searchForm.attr("action"),
             method: $searchForm.attr("method"),
             data: $.param(query),
-            dataType: 'json',
+            dataType:'json',
             success: function (movie) {
                 console.log(movie);
                 $('.main-content').hide();
@@ -66,7 +65,7 @@ $(function () {
     $searchYear.attr("name", "y");
 
     $searchForm.attr({
-        action: "http://www.omdbapi.com/",
+        action: "https://www.omdbapi.com/?callback=?",
         method: "get"
     });
 
@@ -82,7 +81,7 @@ $(function () {
             url: $(this).attr('action'),
             method: $(this).attr('method'),
             data: query,
-            dataType:'json',
+            dataType: 'json',
             success: function (movies) {
                 console.log(movies);
                 if (movies.Response === "False" ){
@@ -92,11 +91,11 @@ $(function () {
                     $moviesUl.html(movieItem);
                 }else {
                     $.each(movies.Search, function (index, movie) {
-                        movieItem += '<li onclick="getMovie(this)"><div class="poster-wrap">';
+                        movieItem += '<li onclick="getMovie($(this))"><div class="poster-wrap">';
                         if(movie.Poster === 'N/A'){
                             movieItem += '<i class="material-icons poster-placeholder">crop_original</i></div>';
                         }else{
-                            movieItem += '<img class="movie-poster" src='+movie.Poster+'></div>';
+                            movieItem += '<img class="movie-poster" src='+movie.Poster +'></div>';
                         }
                         movieItem += '<span class="movie-title">'+ movie.Title+'</span>';
                         movieItem += '<span class="movie-year">'+ movie.Year+'</span>';
@@ -116,9 +115,9 @@ $(function () {
 
     });
 
-    $(window)[0].onpopstate = function(event, data){
-        event.preventDefault();
-        console.log(event, data);
-    };
+    // $(window)[0].onpopstate = function(event, data){
+    //     event.preventDefault();
+    //     console.log(event, data);
+    // };
 
 });

@@ -203,7 +203,7 @@ button {
     border: 2px solid #fff;
   }
   #movie-header{
-    height:27em;
+    height:33em;
   }
   body{
     font: 0.8em/1.5 'Roboto', sans-serif ;
@@ -212,7 +212,7 @@ button {
     font-size: initial;
   }
   #back-search{
-    width: 17%;
+    width: 38%
   }
 }
 
@@ -245,9 +245,9 @@ button {
     transform: scale(1.1);
   }
 
- .movie-title {
+  .movie-title {
     padding-right: 1.25em;
- }
+  }
   .movie-poster-large{
     height: 130%;
     border: 5px solid #fff;
@@ -256,7 +256,7 @@ button {
     height: 40vh;
   }
   #back-search{
-    width: 16%;
+    width: 25%;
   }
 }
 
@@ -286,11 +286,11 @@ button {
     height: 14em;
   }
   #back-search{
-    width: 15%;
+    width: 25%;
   }
 }
 
-@media (min-width: 769px) and (max-width: 999px) { 
+@media (min-width: 769px) and (max-width: 999px) {
   .movie-list li:nth-of-type(3n+1) {
     clear: left;
   }
@@ -302,7 +302,7 @@ button {
     height: 176%;
   }
   #back-search{
-    width: 14%;
+    width: 15%;
   }
 }
 
@@ -331,25 +331,23 @@ button {
 ======================================*/
 
 #back-search::before{
-  content: '<';
+  content: '< ';
+  font-family: monospace, cursive;
 }
 
 #movie-header{
-  background: #49494e;
+  background: #545462;
   color: #fff;
 }
 
 .movie-poster-large{
   float: left;
   position: static;
-  margin-top: 33px;
-  margin-right: 6px;
-  margin-left: 31px;
-
+  margin: 56px 6px 0 26px;
 }
 
 #back-search{
-  position: fixed;
+  position: absolute;
   color: white;
   font-size: 2vh;
 }
@@ -361,7 +359,8 @@ button {
 #view-movie{
   background: #35b936;
   color: white;
-  padding: 1%;
+  border: 2px solid #49494e;
+  padding: 7px;
 }
 
 #movie-header > i {
